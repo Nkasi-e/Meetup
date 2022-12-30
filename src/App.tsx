@@ -14,8 +14,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<AllMeetups />} />
-          <Route path="/newmeetup" element={<NewMeetup />} />
-          <Route path="/favourite" element={<Favourite />} />
+          <Route path="newmeetup" element={<NewMeetup />} />
+          <Route path="favourite" element={<Favourite />} />
         </Routes>
       </ThemeProvider>
     </div>

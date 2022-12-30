@@ -1,25 +1,25 @@
 import React from 'react';
-import { Bar, MainNav, NavLi, NavLink } from './nav.styles';
+import { Bar, Logo, MainNav, NavLi, NavLink } from './nav.styles';
 
 const Nav = () => {
   return (
     <Bar>
-      <div>
+      <Logo>
         <h4>Logo</h4>
-      </div>
+      </Logo>
       {/* <NavBarToggle onClick={() => this.toggleNavBar()}>
         <Hamburger />
       </NavBarToggle>
       <Logo to="#">logo</Logo> */}
       <MainNav>
         <NavLi>
-          <NavLink to="#">Home</NavLink>
+          <NavLink to="/">Home</NavLink>
         </NavLi>
         <NavLi>
-          <NavLink to="#">About</NavLink>
+          <NavLink to="newmeetup">New Meetup</NavLink>
         </NavLi>
         <NavLi>
-          <NavLink to="#"></NavLink>
+          <NavLink to="favourite">Favorites</NavLink>
         </NavLi>
         <NavLi>
           <NavLink to="#">Register</NavLink>

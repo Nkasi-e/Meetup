@@ -40,12 +40,12 @@ export const NavLink = styled(Link)`
     margin: 0px 10px;
   }
 `;
-// export const Logo  = NavLink.extend`
-//   display: inline-block;
-//   font-size: 22px;
-//   margin-top: 10px;
-//   margin-left: 20px;
-// `
+export const Logo = styled.div`
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 20px;
+`;
 export const NavBarToggle = styled.span`
   position: absolute;
   top: 10px;

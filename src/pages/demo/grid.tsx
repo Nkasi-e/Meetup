@@ -12,7 +12,7 @@ export const Card = styled.div`
   /* margin: 1rem */
 `;
 interface IGrid {
-  name?: string;
+  name: string;
   country: string;
 }
 
@@ -21,6 +21,7 @@ function Grid({ name, country }: IGrid): JSX.Element {
   return (
     <Container>
       <Card>
+        <p>{country}</p>
         <p>{name}</p>
       </Card>
       <Card>
