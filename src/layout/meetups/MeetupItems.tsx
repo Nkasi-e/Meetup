@@ -1,5 +1,6 @@
 import React from 'react';
-import dummyMeetup from './MeetupList';
+import Card from '../../components/Card';
+import styled from 'styled-components';
 
 interface IMeetup {
   image: string;
@@ -15,20 +16,35 @@ const MeetupItems = ({
   address,
 }: IMeetup): JSX.Element => {
   return (
-    <li>
-      <div>
-        <img src={image} alt={title} />
-      </div>
-      <div>
-        <h3>{title}</h3>
-        <p>{address}</p>
-        <p>{description}</p>
-      </div>
-      <div>
-        <button>Add to Favorite</button>
-      </div>
-    </li>
+    <Wrapper>
+      <Card>
+        <StyledImage>
+          <img src={image} alt={title} />
+        </StyledImage>
+        <div>
+          <h3>{title}</h3>
+          <p>{address}</p>
+          <p>{description}</p>
+        </div>
+        <div>
+          <button>Add to Favorite</button>
+        </div>
+      </Card>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  padding: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+`;
+
+const StyledImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 export default MeetupItems;
