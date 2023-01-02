@@ -18,7 +18,7 @@ const Hero = () => {
     <Container>
       <Header />
       <Hero />
-      <Grid name="Man Reason am" country="Nigeria" />
+      <Grid country="Nigeria" />
       <Card>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam autem

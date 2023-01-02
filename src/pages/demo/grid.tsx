@@ -12,7 +12,7 @@ export const Card = styled.div`
   /* margin: 1rem */
 `;
 interface IGrid {
-  name: string;
+  name?: string;
   country: string;
 }
 
