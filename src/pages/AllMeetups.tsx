@@ -7,33 +7,42 @@ interface Data {
 }
 
 const AllMeetups = () => {
-  const [loading, setLoading] = useState<boolean>(true);
-  const [meetupData, setMeetupData] = React.useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [loadedMeetups, setLoadedMeetups] = useState<Data[]>([]);
 
-  // useEffect(() => {
-  //   const api = async () => {
-  //     const data = await fetch('https://jsonplaceholder.typicode.com/posts', {
-  //       method: 'GET',
-  //     });
-  //     const jsonData = await data.json();
-  //     setMeetupData(jsonData);
-  //     setLoading(false);
-  //   };
+  useEffect(() => {
+    setIsLoading(true);
+    fetch('https://meetup-540fa-default-rtdb.firebaseio.com/meetups.json')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const meetups = [];
+        // looping through the keys in the database to display data
+        for (const key in data) {
+          const meetup = {
+            id: key,
+            ...data[key],
+          };
+          meetups.push(meetup);
+        }
+        setIsLoading(false);
+        setLoadedMeetups(meetups);
+      });
+  }, []);
 
-  //   api();
-  // }, []);
+  if (isLoading) {
+    return (
+      <section>
+        <h3>Loading.....</h3>
+      </section>
+    );
+  }
 
-  // if (loading) {
-  //   return (
-  //     <div>
-  //       <h3>Loading...</h3>
-  //     </div>
-  //   );
-  // }
   return (
     <>
-      {/* <h1>{meetupData}</h1> */}
-      {dummyMeetup.map((meetup) => {
+      <h3>All Meetup</h3>
+      {loadedMeetups.map((meetup) => {
         return (
           <div key={meetup.id}>
             <MeetupItems
