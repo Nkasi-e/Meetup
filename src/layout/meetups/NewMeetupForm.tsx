@@ -5,7 +5,7 @@ type DataType = {
   [k: string]: any;
 };
 
-const NewMeetupForm = () => {
+const NewMeetupForm = ({ addMeetup }: DataType): JSX.Element => {
   const titleInputRef = useRef<any>();
   const imageInputRef = useRef<any>();
   const addressInputRef = useRef<any>();
@@ -25,7 +25,7 @@ const NewMeetupForm = () => {
       address: enteredAddress,
       description: enteredDescription,
     };
-    console.log(meetupData);
+    addMeetup(meetupData);
   };
 
   return (
