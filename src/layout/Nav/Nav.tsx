@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Bar, Logo, MainNav, NavLi, NavLink } from './nav.styles';
+import FavoriteContext from '../../store/favorites-context';
 
 const Nav = () => {
+  const favouriteCtx = useContext(FavoriteContext);
+
+  let count;
+  if (favouriteCtx.totalFavorites === 0) {
+    count = null;
+  } else {
+    count = favouriteCtx.totalFavorites;
+  }
+
   return (
     <Bar>
       <Logo>
@@ -19,7 +29,7 @@ const Nav = () => {
           <NavLink to="newmeetup">New Meetup</NavLink>
         </NavLi>
         <NavLi>
-          <NavLink to="favourite">Favorites</NavLink>
+          <NavLink to="favourite">Favorites {count}</NavLink>
         </NavLi>
         <NavLi>
           <NavLink to="#">Register</NavLink>

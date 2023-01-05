@@ -11,7 +11,7 @@ const AllMeetups = () => {
   const [loadedMeetups, setLoadedMeetups] = useState<Data[]>([]);
 
   useEffect(() => {
-    setIsLoading(true);
+    setIsLoading(false);
     fetch('https://meetup-540fa-default-rtdb.firebaseio.com/meetups.json')
       .then((response) => {
         return response.json();
@@ -42,10 +42,11 @@ const AllMeetups = () => {
   return (
     <>
       <h3>All Meetup</h3>
-      {loadedMeetups.map((meetup) => {
+      {dummyMeetup.map((meetup) => {
         return (
           <div key={meetup.id}>
             <MeetupItems
+              id={meetup.id}
               image={meetup.image}
               title={meetup.title}
               address={meetup.address}

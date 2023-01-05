@@ -6,11 +6,11 @@ const StyledCard = styled.div`
   border-radius: 6px;
 `;
 
-interface ICard {
-  [k: string]: any;
-}
+// interface ICard {
+//   [k: string]: any;
+// }
 
-const Card = ({ children }: ICard): JSX.Element => {
+const Card = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return <StyledCard>{children}</StyledCard>;
 };
 

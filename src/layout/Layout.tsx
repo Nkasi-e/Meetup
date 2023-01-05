@@ -8,11 +8,7 @@ const MainStyle = styled.main`
   max-width: 40rem;
 `;
 
-interface ILayout {
-  [k: string]: any;
-}
-
-const Layout = ({ children }: ILayout): JSX.Element => {
+const Layout = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return (
     <>
       <div>
